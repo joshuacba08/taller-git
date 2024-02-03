@@ -70,7 +70,7 @@ Antes de empezar a trabajar con Git, es necesario configurar nuestro nombre de u
 
 ```bash
 git config --global user.name "Tu nombre"
-git config --global user.email "
+git config --global user.email "email@email.com"
 ```
 
 De esta forma, cada acción que realicemos en el repositorio, quedará registrada con nuestro nombre y correo electrónico.
@@ -168,9 +168,7 @@ Este comando hace un commit con los cambios que se han añadido al área de prep
 
 A continuación, veremos un diagrama que muestra cómo se guardan los cambios en un repositorio de Git.
 
-
 ![r/git - Git workflow diagram showcasing the role of remote-tracking refs (origin/*)](https://preview.redd.it/nm1w0gnf2zh11.png?width=960&crop=smart&auto=webp&s=7614ee78c39285ee1d157c97ebb545430c030cb0)
-
 
 #### Ver el historial de commits
 
@@ -180,7 +178,7 @@ El historial de commits es una lista de todos los commits que se han hecho en el
 git log
 ```
 
-Este comando muestra una lista de todos los commits que se han hecho en el repositorio. Cada commit tiene un identificador único, un autor, una fecha y un mensaje que describe los cambios que se han hecho en el commit. 
+Este comando muestra una lista de todos los commits que se han hecho en el repositorio. Cada commit tiene un identificador único, un autor, una fecha y un mensaje que describe los cambios que se han hecho en el commit.
 
 #### Ver el estado del repositorio
 
@@ -196,7 +194,7 @@ Este comando muestra una lista de los archivos que se han modificado, añadido o
 
 En este capítulo, hemos aprendido qué es Git, cómo instalarlo, cómo usar la terminal de comandos, cómo configurar Git, cómo crear un repositorio local, cómo hacer cambios en el código y cómo guardar estos cambios en el repositorio. En el próximo capítulo, veremos cómo podemos trabajar de forma colaborativa en un proyecto y cómo podemos usar un repositorio remoto para almacenar el código de un proyecto.
 
-## Ejercicios
+### Ejercicios
 
 1. Crear un repositorio local en una carpeta llamada "01-hello-git".
 2. Crear un archivo llamado "README.md" con el siguiente contenido:
@@ -217,8 +215,68 @@ En este capítulo, hemos aprendido qué es Git, cómo instalarlo, cómo usar la 
 4. Hacer un commit con los cambios.
 5. Ver el historial de commits.
 
+## Branches (Ramas)
+
+Para trabajar con Git es necesario imaginarse un árbol, donde la rama principal es la rama `master` y de ella se desprenden otras ramas que son las que contienen los cambios que se van a hacer en el proyecto. Posteriormente, estas ramas se pueden integrar a la rama `master` para que los cambios se vean reflejados en el proyecto.
+
+Un ejemplo muy común de uso de ramas es cuando se quiere trabajar en una nueva funcionalidad del proyecto. En este caso, se crea una nueva rama a partir de la rama `master` y se hacen los cambios necesarios en la nueva rama. Una vez que los cambios estén listos, se integran a la rama `master` y se eliminan la rama que se creó.
+
+En mi experiencia en la industria, he aplicado una modalidad de trabajo llamada `Git Flow` que es una forma de trabajar con ramas en Git. En esta modalidad, se crean dos ramas principales: `master` y `develop`. La rama `master` contiene el código que se encuentra en producción y la rama `develop` contiene el código que se encuentra en desarrollo. A partir de la rama `develop` se crean nuevas ramas para trabajar en nuevas funcionalidades del proyecto. Una vez que los cambios estén listos, se integran a la rama `develop` y posteriormente a la rama `master`.
+
+![Flujo de trabajo de Git: ramas de función](https://wac-cdn.atlassian.com/dam/jcr:34c86360-8dea-4be4-92f7-6597d4d5bfae/02%20Feature%20branches.svg?cdnVersion=1427)
 
 
+Como se puede apreciar en este gráfico, el flujo de trabajo de Git con ramas es muy flexible y permite trabajar de forma colaborativa en un proyecto. 
 
+**Rama Main (Master)**: Es la rama principal del proyecto. Contiene el código que se encuentra en producción.
+
+**Rama Develop**: Es la rama que contiene el código que se encuentra en desarrollo. A partir de esta rama se crean nuevas ramas para trabajar en nuevas funcionalidades del proyecto.
+
+**Features**: Son las ramas que se crean a partir de la rama `develop` para trabajar en nuevas funcionalidades del proyecto. Se integran a la rama `develop` una vez que los cambios estén listos.
+
+En un grupo de trabajo, cada miembro puede crear una rama a partir de la rama `develop` para trabajar en una nueva funcionalidad del proyecto. Una vez que los cambios estén listos, se integran a la rama `develop` y posteriormente a la rama `master`. Veremos esta dinámica más adelante en el taller.
+
+
+### Crear una nueva rama
+
+Para crear una nueva rama en Git, es necesario ejecutar el siguiente comando:
+
+```bash
+git branch nombre-de-la-rama
+```
+
+Este comando crea una nueva rama con el nombre que le indiquemos. Una vez que hayamos creado la rama, podemos ver una lista de todas las ramas que se han creado en el repositorio con el siguiente comando:
+
+```bash
+git branch
+```
+
+Este comando muestra una lista de todas las ramas que se han creado en el repositorio. La rama que se encuentra resaltada es la rama en la que nos encontramos. Para cambiar de rama, es necesario ejecutar el siguiente comando:
+
+```bash
+git checkout nombre-de-la-rama
+```
+
+Este comando cambia de rama a la rama que le indiquemos. Una vez que hayamos cambiado de rama, podemos hacer cambios en el código y guardarlos en la rama. A continuación, veremos un ejemplo de cómo crear una nueva rama y cómo cambiar de rama.
+
+### Ejemplo
+
+Vamos a crear una nueva rama llamada "feature-readme" y vamos a cambiar a esta rama. Para ello, vamos a ejecutar los siguientes comandos:
+
+```bash
+git branch feature-readme
+git checkout feature-readme
+```
+
+Una vez que hayamos cambiado a la rama "feature-readme", vamos a hacer cambios en el archivo "README.md". Vamos a añadir nuestro nombre a la lista de alumnos. Una vez que hayamos hecho los cambios, vamos a guardarlos en la rama "feature-readme". A continuación, veremos cómo hacer esto.
+
+### Hacer cambios en la rama
+
+Una vez que hayamos cambiado a la rama en la que queremos trabajar, podemos hacer cambios en el código y guardarlos en la rama. Para hacer cambios en el código, es necesario seguir los siguientes pasos:
+
+1. Hacer cambios en el código.
+2. Añadir los archivos al área de preparación.
+3. Hacer un commit con los cambios.
+4. Ver el estado del repositorio.
 
 
