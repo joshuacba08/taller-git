@@ -84,10 +84,10 @@ Los repositorios locales son aquellos que se encuentran en nuestra máquina. En 
 Para crear un repositorio local, es necesario ir a una ubicación en la que querramos guardar nuestro proyecto. Antes que nada, vamos a crear una nueva carpeta en la que guardaremos nuestro proyecto. Para ello, vamos a abrir la terminal de comandos y vamos a ejecutar el siguiente comando:
 
 ```bash
-mkdir taller-git
+mkdir 01-hello-git
 ```
 
-Este comando crear una nueva carpeta llamada "01-hello-git". Ahora, vamos a movernos a esta carpeta con el siguiente comando:
+Este comando creará una nueva carpeta llamada "01-hello-git". Ahora, vamos a movernos a esta carpeta con el siguiente comando:
 
 ```bash
 cd 01-hello-git
