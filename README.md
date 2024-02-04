@@ -279,4 +279,126 @@ Una vez que hayamos cambiado a la rama en la que queremos trabajar, podemos hace
 3. Hacer un commit con los cambios.
 4. Ver el estado del repositorio.
 
+Todos estos pasos están explicados en el capítulo anterior, por lo que no los vamos a explicar de nuevo. Sin embargo, es importante recordar que cada rama tiene su propio historial de commits, por lo que los cambios que se hagan en una rama no afectan a las demás ramas.
 
+### Resumen
+
+En este capítulo, hemos aprendido qué son las ramas en Git, cómo crear una nueva rama, cómo cambiar de rama y cómo hacer cambios en la rama. En el próximo capítulo, veremos como unir ramas y resolver conflictos.
+
+
+### Ejercicios
+
+1. Crear una nueva rama llamada "feature-readme".
+2. Cambiar a la rama "feature-readme".
+3. Hacer cambios en el archivo "README.md".
+4. Añadir los cambios al área de preparación.
+5. Hacer un commit con los cambios.
+6. Ver el historial de commits.
+7. Ver el estado del repositorio.
+
+
+## Unir ramas y resolver conflictos (Merge)
+
+Una vez que se han hecho cambios en una rama y se quieren integrar a otra rama, es necesario unir las ramas. Este proceso se llama "merge" y consiste en integrar los cambios de una rama a otra rama. En este proceso, es posible que se presenten conflictos, que son situaciones en las que dos ramas han hecho cambios en las mismas líneas de código. En este caso, es necesario resolver los conflictos para poder unir las ramas.
+
+### Unir ramas
+
+Supongamos que hemos terminado todo lo que queríamos hacer en nuestra rama `feature-readme` y queremos integrar los cambios a la rama `master`. Para hacer esto, es necesario seguir los siguientes pasos:
+
+1. Cambiar a la rama a la que queremos integrar los cambios.
+2. Unir la rama con los cambios.
+3. Ver el historial de commits.
+4. Ver el estado del repositorio.
+5. Resolver conflictos (si es necesario).
+6. Hacer un commit con los cambios.
+
+**Nota:** En este caso, vamos a unir la rama `feature-readme` a la rama `master`. Sin embargo, en la metodología `Git Flow` se uniría a la rama `develop` y posteriormente a la rama `master`. En este caso, vamos a unir la rama `feature-readme` a la rama `master` para simplificar el proceso.
+
+### Ejemplo
+
+Vamos a unir la rama `feature-readme` a la rama `master`. Para ello, vamos a cambiar a la rama `master` y vamos a unir la rama `feature-readme` a la rama `master`. A continuación, veremos cómo hacer esto.
+
+### Cambiar a la rama a la que queremos integrar los cambios
+
+Para cambiar a la rama a la que queremos integrar los cambios, es necesario ejecutar el siguiente comando:
+
+```bash
+git checkout master
+```
+
+Este comando cambia a la rama `master`. Una vez que hayamos cambiado a la rama `master`, podemos unir la rama `feature-readme` a la rama `master`. A continuación, veremos cómo hacer esto.
+
+### Unir la rama con los cambios
+
+Para unir la rama `feature-readme` a la rama `master`, es necesario ejecutar el siguiente comando:
+
+```bash
+git merge feature-readme
+```
+
+Este comando une la rama `feature-readme` a la rama `master`. Si no hay conflictos, los cambios se integrarán a la rama `master` y se mostrará un mensaje que indica que la unión se ha hecho correctamente. Si hay conflictos, se mostrará un mensaje que indica que hay conflictos y será necesario resolverlos para poder unir las ramas.
+
+### Ver el historial de commits
+
+Una vez que hayamos unido la rama `feature-readme` a la rama `master`, podemos ver el historial de commits con el siguiente comando:
+
+```bash
+git log
+```
+
+Este comando muestra una lista de todos los commits que se han hecho en el repositorio. Si la unión se ha hecho correctamente, veremos que los commits de la rama `feature-readme` se han integrado a la rama `master`. A continuación, veremos cómo ver el estado del repositorio.
+
+### Ver el estado del repositorio
+
+Una vez que hayamos unido la rama `feature-readme` a la rama `master`, podemos ver el estado del repositorio con el siguiente comando:
+
+```bash
+git status
+```
+
+Este comando muestra una lista de los archivos que se han modificado, añadido o eliminado en el repositorio. Si la unión se ha hecho correctamente, veremos que no hay archivos pendientes de añadir al área de preparación ni de hacer un commit. A continuación, veremos cómo resolver conflictos.
+
+### Resolver conflictos
+
+Si hay conflictos al unir las ramas, es necesario resolverlos para poder unir las ramas. Para resolver conflictos, es necesario tener en cuenta que los conflictos están marcados en el código con la siguiente estructura:
+
+```markdown
+<<<<<<< HEAD
+Código de la rama actual
+=======
+Código de la rama que se quiere unir
+>>>>>>> nombre-de-la-rama
+```
+Un conflicto sucede cuando dos ramas han modificado la misma línea de código. En este caso, es necesario decidir qué cambios se quieren conservar y cuáles se quieren eliminar. Una vez que hayamos resuelto los conflictos, es necesario añadir los archivos al área de preparación y hacer un commit con los cambios.
+
+Si me paro en la rama `master` y hago un `merge` con la rama `feature-readme`, los cambios entrantes o tambien llamados `incoming changes` son los cambios que se encuentran en la rama `feature-readme` y los cambios salientes o también llamados `current changes` son los cambios que se encuentran en la rama `master`.
+
+**Nota:** Es necesario resolver los conflictos que se puedan producir al unir las ramas. Si no se resuelven los conflictos, no se podrán unir las ramas. 
+
+### Resumen
+
+En este capítulo, hemos aprendido cómo unir ramas en Git, cómo cambiar de rama, cómo ver el historial de commits, cómo ver el estado del repositorio y cómo resolver conflictos. En el próximo capítulo, veremos cómo trabajar de forma colaborativa en un proyecto y cómo usar un repositorio remoto para almacenar el código de un proyecto.
+
+### Ejercicios
+
+1. Cambiar a la rama "master".
+2. Unir la rama "feature-readme" a la rama "master".
+3. Ver el historial de commits.
+4. Ver el estado del repositorio.
+5. Resolver conflictos (si es necesario).
+6. Hacer un commit con los cambios.
+7. Ver el historial de commits.
+8. Ver el estado del repositorio.
+
+
+## Repositorios remotos
+
+Los repositorios remotos son aquellos que se encuentran en un servidor remoto. En estos repositorios es donde se almacena el código de un proyecto y se trabaja de forma colaborativa. Existen muchos servicios que ofrecen repositorios remotos, como GitHub, GitLab, Bitbucket, entre otros. De acuerdo a mi experiencia, he trabajado con estos tres servicios y me han parecido muy buenos, sin embargo abordaremos el uso de GitHub debido a que hoy en día es el más popular y el que más se utiliza en la industria.
+
+### Crear un repositorio remoto
+
+Para crear un repositorio remoto en GitHub, es necesario seguir los siguientes pasos:
+
+1. Crear una cuenta en GitHub.
+2. Crear un nuevo repositorio.
+3. Usar la bateria de comandos que GitHub nos proporciona para subir nuestro repositorio local a GitHub.
