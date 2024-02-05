@@ -1,5 +1,7 @@
 # Taller de GIT
 
+![portada](https://res.cloudinary.com/dnge4qorr/image/upload/v1707116606/academy/taller-git-portada_qaebzg.png)
+
 ## Profesor:
 
 - [Josue Oroya](https://github.com/joshuacba08)
@@ -225,8 +227,7 @@ En mi experiencia en la industria, he aplicado una modalidad de trabajo llamada 
 
 ![Flujo de trabajo de Git: ramas de función](https://wac-cdn.atlassian.com/dam/jcr:34c86360-8dea-4be4-92f7-6597d4d5bfae/02%20Feature%20branches.svg?cdnVersion=1427)
 
-
-Como se puede apreciar en este gráfico, el flujo de trabajo de Git con ramas es muy flexible y permite trabajar de forma colaborativa en un proyecto. 
+Como se puede apreciar en este gráfico, el flujo de trabajo de Git con ramas es muy flexible y permite trabajar de forma colaborativa en un proyecto.
 
 **Rama Main (Master)**: Es la rama principal del proyecto. Contiene el código que se encuentra en producción.
 
@@ -235,7 +236,6 @@ Como se puede apreciar en este gráfico, el flujo de trabajo de Git con ramas es
 **Features**: Son las ramas que se crean a partir de la rama `develop` para trabajar en nuevas funcionalidades del proyecto. Se integran a la rama `develop` una vez que los cambios estén listos.
 
 En un grupo de trabajo, cada miembro puede crear una rama a partir de la rama `develop` para trabajar en una nueva funcionalidad del proyecto. Una vez que los cambios estén listos, se integran a la rama `develop` y posteriormente a la rama `master`. Veremos esta dinámica más adelante en el taller.
-
 
 ### Crear una nueva rama
 
@@ -285,7 +285,6 @@ Todos estos pasos están explicados en el capítulo anterior, por lo que no los 
 
 En este capítulo, hemos aprendido qué son las ramas en Git, cómo crear una nueva rama, cómo cambiar de rama y cómo hacer cambios en la rama. En el próximo capítulo, veremos como unir ramas y resolver conflictos.
 
-
 ### Ejercicios
 
 1. Crear una nueva rama llamada "feature-readme".
@@ -295,7 +294,6 @@ En este capítulo, hemos aprendido qué son las ramas en Git, cómo crear una nu
 5. Hacer un commit con los cambios.
 6. Ver el historial de commits.
 7. Ver el estado del repositorio.
-
 
 ## Unir ramas y resolver conflictos (Merge)
 
@@ -369,11 +367,12 @@ Código de la rama actual
 Código de la rama que se quiere unir
 >>>>>>> nombre-de-la-rama
 ```
+
 Un conflicto sucede cuando dos ramas han modificado la misma línea de código. En este caso, es necesario decidir qué cambios se quieren conservar y cuáles se quieren eliminar. Una vez que hayamos resuelto los conflictos, es necesario añadir los archivos al área de preparación y hacer un commit con los cambios.
 
 Si me paro en la rama `master` y hago un `merge` con la rama `feature-readme`, los cambios entrantes o tambien llamados `incoming changes` son los cambios que se encuentran en la rama `feature-readme` y los cambios salientes o también llamados `current changes` son los cambios que se encuentran en la rama `master`.
 
-**Nota:** Es necesario resolver los conflictos que se puedan producir al unir las ramas. Si no se resuelven los conflictos, no se podrán unir las ramas. 
+**Nota:** Es necesario resolver los conflictos que se puedan producir al unir las ramas. Si no se resuelven los conflictos, no se podrán unir las ramas.
 
 ### Resumen
 
@@ -389,7 +388,6 @@ En este capítulo, hemos aprendido cómo unir ramas en Git, cómo cambiar de ram
 6. Hacer un commit con los cambios.
 7. Ver el historial de commits.
 8. Ver el estado del repositorio.
-
 
 ## Repositorios remotos
 
