@@ -1,6 +1,6 @@
-# Taller de GIT
-
 ![portada](https://res.cloudinary.com/dnge4qorr/image/upload/v1707116606/academy/taller-git-portada_qaebzg.png)
+
+# Taller de GIT
 
 ## Profesor:
 
